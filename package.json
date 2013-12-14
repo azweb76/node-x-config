@@ -1,0 +1,22 @@
+{
+  "name": "x-config",
+  "version": "0.0.1",
+  "description": "Used to load configuration.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/azweb76/node-x-config.git"
+  },
+  "author": "Dan Clayton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azweb76/node-x-config/issues"
+  },
+  "homepage": "https://github.com/azweb76/node-x-config",
+  "dependencies": {
+    "extend": "~1.2.1"
+  }
+}

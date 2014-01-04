@@ -18,6 +18,7 @@ npm install x-config --save
 	"id": "my-app",
 	"consoleEnabled": true
 }
+```
 
 ```javascript
 

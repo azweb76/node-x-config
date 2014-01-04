@@ -16,6 +16,7 @@
   "bugs": {
     "url": "https://github.com/azweb76/node-x-config/issues"
   },
+  "keywords": [ "config" ],
   "homepage": "https://github.com/azweb76/node-x-config",
   "dependencies": {
     "extend": "~1.2.1"

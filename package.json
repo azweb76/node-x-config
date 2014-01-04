@@ -4,7 +4,8 @@
   "description": "Configuration package for node applications.",
   "main": "lib/x-config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "node node_modules/jshint/bin/jshint ./lib/.",
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,13 @@
   "homepage": "https://github.com/azweb76/node-x-config",
   "dependencies": {
     "extend": "~1.2.1"
+  },
+  "devDependencies": {
+    "mocha": "1.13.0",
+    "chai": "1.8.1",
+    "sinon": "1.7.3",
+    "istanbul": "0.1.44",
+    "mocha-istanbul": "0.2.0",
+    "jshint": "~2.4.1"
   }
 }

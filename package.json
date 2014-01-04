@@ -1,6 +1,6 @@
 {
   "name": "x-config",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Configuration package for node applications.",
   "main": "lib/x-config.js",
   "scripts": {
@@ -16,7 +16,9 @@
   "bugs": {
     "url": "https://github.com/azweb76/node-x-config/issues"
   },
-  "keywords": [ "config" ],
+  "keywords": [
+    "config"
+  ],
   "homepage": "https://github.com/azweb76/node-x-config",
   "dependencies": {
     "extend": "~1.2.1"

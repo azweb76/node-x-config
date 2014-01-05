@@ -6,7 +6,7 @@ This package provides an easy way to access configuration information based on l
 - ./config/default.json
 - ./config/{{environment}}.json
 - {{system}}/{{id}}.json
-- {{system>}}/default.json
+- {{system}}/default.json
 
 ##Usage
 
@@ -20,12 +20,16 @@ npm install x-config --save
 ```
 
 ```javascript
-
 var config = require('x-config');
 if (config.consoleEnabled){
 	console.log(config);
 }
+```
 
+The path to the system configuration files can either be defined using a SYSTEM_CONFIG environment variable or set systemConfig in the default or environment variable.
+
+```json
+{ "systemConfig": "/etc/node/" }
 ```
 
 

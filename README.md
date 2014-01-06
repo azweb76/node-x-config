@@ -8,6 +8,8 @@ This package provides an easy way to access configuration information based on l
 - {{system}}/{{id}}.json
 - {{system}}/default.json
 
+NOTE: The locator climbs the path from node_modules/x-config location to the volume root looking for a config directory. This enables packages to maintain seperate configurations.
+
 ##Usage
 
 npm install x-config --save

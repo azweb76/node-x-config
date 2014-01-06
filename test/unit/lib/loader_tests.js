@@ -11,7 +11,7 @@ describe("loader", function() {
     });
     
     it("should load local config", function(done) {
-        var config = loader('development', path.resolve(__dirname, '../fixtures'),
+        var config = loader('development', path.resolve(__dirname, '../fixtures/config'),
         		path.resolve(__dirname, '../fixtures/systemConfigs'));
         assert.deepEqual(config, {
         	id: 'test-app',
@@ -24,7 +24,7 @@ describe("loader", function() {
     });
     
     it("should load local config with no app config", function(done) {
-        var config = loader('test', path.resolve(__dirname, '../fixtures'),
+        var config = loader('test', path.resolve(__dirname, '../fixtures/config'),
         		path.resolve(__dirname, '../fixtures/systemConfigs'));
         assert.deepEqual(config, {
         	fromSystem: 'system',
@@ -34,7 +34,7 @@ describe("loader", function() {
     });
     
     it("should load local config with missing app config", function(done) {
-        var config = loader('production', path.resolve(__dirname, '../fixtures'),
+        var config = loader('production', path.resolve(__dirname, '../fixtures/config'),
         		path.resolve(__dirname, '../fixtures/systemConfigs'));
         assert.deepEqual(config, {
         	id: 'test-app2',
@@ -46,7 +46,7 @@ describe("loader", function() {
     });
     
     it("should load local config with missing system config", function(done) {
-        var config = loader('production', path.resolve(__dirname, '../fixtures'),
+        var config = loader('production', path.resolve(__dirname, '../fixtures/config'),
         		path.resolve(__dirname, '../fixtures/systemConfigs2'));
         assert.deepEqual(config, {
         	id: 'test-app2',

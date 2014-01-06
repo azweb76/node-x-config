@@ -28,7 +28,7 @@ if (config.consoleEnabled){
 }
 ```
 
-The path to the system configuration files can either be defined using a SYSTEM_CONFIG environment variable or set systemConfig in the default or environment variable.
+The path to the system configuration files can either be defined using a SYSTEM_CONFIG environment variable or set systemConfig in the default or environment config files.
 
 ```json
 { "systemConfig": "/etc/node/" }

@@ -21,7 +21,7 @@
   ],
   "homepage": "https://github.com/azweb76/node-x-config",
   "dependencies": {
-    "x-util": "0.0.3"
+    "x-util": "0.0.4"
   },
   "devDependencies": {
     "mocha": "1.13.0",

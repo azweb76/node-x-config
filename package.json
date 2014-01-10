@@ -1,6 +1,6 @@
 {
   "name": "x-config",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Configuration package for node applications.",
   "main": "lib/x-config.js",
   "scripts": {

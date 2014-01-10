@@ -1,3 +1,4 @@
 {
+	"env": { "development": "^.{2}[d]", "test": "^.{2}[t]", "production": "^.{2}[p]" },
 	"fromDefault": "default"
 }

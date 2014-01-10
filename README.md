@@ -8,7 +8,9 @@ This package provides an easy way to access configuration information based on l
 - {{system}}/{{id}}.json
 - {{system}}/default.json
 
-NOTE: The locator climbs the path from node_modules/x-config location to the volume root looking for a config directory. This enables packages to maintain seperate configurations.
+NOTES:
+- The locator climbs the path from node_modules/x-config location to the volume root looking for a config directory. This enables packages to maintain seperate configurations.
+- The environment can be determined via HOSTNAME, or by placing env in default.json with dev, test, or prod, or pattern matching (see below).
 
 ##Usage
 
@@ -17,6 +19,7 @@ npm install x-config --save
 ```json
 {
 	"id": "my-app",
+	"env": { "dev": "^dev", "test": "^test", "prod": "^prod" }, 
 	"consoleEnabled": true
 }
 ```

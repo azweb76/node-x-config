@@ -15,6 +15,7 @@ describe("loader", function() {
         		path.resolve(__dirname, '../fixtures/systemConfigs'));
         assert.deepEqual(config, {
         	id: 'test-app',
+            env: 'development',
         	fromSystem: 'system',
         	fromApp: 'app',
         	fromDefault: 'default',
@@ -27,6 +28,7 @@ describe("loader", function() {
         var config = loader('test', path.resolve(__dirname, '../fixtures/config'),
         		path.resolve(__dirname, '../fixtures/systemConfigs'));
         assert.deepEqual(config, {
+            env: 'test',
         	fromSystem: 'system',
         	fromDefault: 'default'
         }, 'should match expected config');
@@ -38,6 +40,7 @@ describe("loader", function() {
         		path.resolve(__dirname, '../fixtures/systemConfigs'));
         assert.deepEqual(config, {
         	id: 'test-app2',
+            env: 'production',
         	fromSystem: 'system',
         	fromDefault: 'default',
         	fromProd: 'prod'
@@ -50,9 +53,31 @@ describe("loader", function() {
         		path.resolve(__dirname, '../fixtures/systemConfigs2'));
         assert.deepEqual(config, {
         	id: 'test-app2',
+            env: 'production',
         	fromDefault: 'default',
         	fromProd: 'prod'
         }, 'should match expected config');
         done();
+    });
+
+    describe("uses regex for env", function(){
+        var origHostname = process.env.HOSTNAME;
+
+        before(function(){ process.env.HOSTNAME = 'g1dwtest01' });
+        after(function(){ process.env.HOSTNAME = origHostname });
+
+        it("should load config from dev using pattern matching", function(done) {
+            var config = loader('not-valid-env', path.resolve(__dirname, '../fixtures/config'),
+                    path.resolve(__dirname, '../fixtures/systemConfigs'));
+            assert.deepEqual(config, {
+                id: 'test-app',
+                env: 'development',
+                fromSystem: 'system',
+                fromApp: 'app',
+                fromDefault: 'default',
+                fromDev: 'dev'
+            }, 'should match expected config');
+            done();
+        });
     });
 });

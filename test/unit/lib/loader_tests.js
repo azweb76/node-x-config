@@ -19,7 +19,8 @@ describe("loader", function() {
         	fromSystem: 'system',
         	fromApp: 'app',
         	fromDefault: 'default',
-        	fromDev: 'dev'
+        	fromDev: 'dev',
+            keyThat: "shouldNotBeOverriden"
         }, 'should match expected config');
         done();
     });
@@ -30,7 +31,8 @@ describe("loader", function() {
         assert.deepEqual(config, {
             env: 'test',
         	fromSystem: 'system',
-        	fromDefault: 'default'
+        	fromDefault: 'default',
+            keyThat: "wantsToOverride"
         }, 'should match expected config');
         done();
     });
@@ -43,7 +45,8 @@ describe("loader", function() {
             env: 'production',
         	fromSystem: 'system',
         	fromDefault: 'default',
-        	fromProd: 'prod'
+        	fromProd: 'prod',
+            keyThat: "wantsToOverride"
         }, 'should match expected config');
         done();
     });
@@ -55,7 +58,8 @@ describe("loader", function() {
         	id: 'test-app2',
             env: 'production',
         	fromDefault: 'default',
-        	fromProd: 'prod'
+        	fromProd: 'prod',
+            keyThat: "wantsToOverride"
         }, 'should match expected config');
         done();
     });
@@ -75,7 +79,8 @@ describe("loader", function() {
                 fromSystem: 'system',
                 fromApp: 'app',
                 fromDefault: 'default',
-                fromDev: 'dev'
+                fromDev: 'dev',
+                keyThat: "shouldNotBeOverriden"
             }, 'should match expected config');
             done();
         });

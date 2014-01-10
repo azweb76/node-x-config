@@ -1,3 +1,4 @@
 {
-	"fromApp": "app"
+	"fromApp": "app",
+	"keyThat": "wantsToOverride"
 }

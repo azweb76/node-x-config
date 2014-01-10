@@ -1,4 +1,5 @@
 {
 	"id": "test-app",
-	"fromDev": "dev"
+	"fromDev": "dev",
+	"keyThat": "shouldNotBeOverriden"
 }

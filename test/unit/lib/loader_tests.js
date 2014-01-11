@@ -5,6 +5,11 @@ var loader = require('../../../lib/loader');
 var path   = require('path');
 
 describe("loader", function() {
+	var origHostname = process.env.HOSTNAME;
+
+    before(function(){ process.env.HOSTNAME = 'XXXXXXXXXXX' });
+    after(function(){ process.env.HOSTNAME = origHostname });
+    
     it("is function", function(done) {
         assert.isFunction(loader, 'should be a function');
         done();

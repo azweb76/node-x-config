@@ -12,7 +12,7 @@ describe("loader", function() {
     
     it("should load local config", function(done) {
         var config = loader('development', path.resolve(__dirname, '../fixtures/config'),
-        		path.resolve(__dirname, '../fixtures/systemConfigs'));
+        		path.resolve(__dirname, '../fixtures/systemConfigs'), 'xxxxxx');
         assert.deepEqual(config, {
         	id: 'test-app',
             env: 'development',
@@ -27,7 +27,7 @@ describe("loader", function() {
     
     it("should load local config with no app config", function(done) {
         var config = loader('test', path.resolve(__dirname, '../fixtures/config'),
-        		path.resolve(__dirname, '../fixtures/systemConfigs'));
+        		path.resolve(__dirname, '../fixtures/systemConfigs'), 'xxxxxx');
         assert.deepEqual(config, {
             env: 'test',
         	fromSystem: 'system',
@@ -39,7 +39,7 @@ describe("loader", function() {
     
     it("should load local config with missing app config", function(done) {
         var config = loader('production', path.resolve(__dirname, '../fixtures/config'),
-        		path.resolve(__dirname, '../fixtures/systemConfigs'));
+        		path.resolve(__dirname, '../fixtures/systemConfigs'), 'xxxxxx');
         assert.deepEqual(config, {
         	id: 'test-app2',
             env: 'production',
@@ -53,7 +53,7 @@ describe("loader", function() {
     
     it("should load local config with missing system config", function(done) {
         var config = loader('production', path.resolve(__dirname, '../fixtures/config'),
-        		path.resolve(__dirname, '../fixtures/systemConfigs2'));
+        		path.resolve(__dirname, '../fixtures/systemConfigs2'), 'xxxxxx');
         assert.deepEqual(config, {
         	id: 'test-app2',
             env: 'production',
@@ -65,14 +65,9 @@ describe("loader", function() {
     });
 
     describe("uses regex for env", function(){
-        var origHostname = process.env.HOSTNAME;
-
-        before(function(){ process.env.HOSTNAME = 'g1dwtest01' });
-        after(function(){ process.env.HOSTNAME = origHostname });
-
         it("should load config from dev using pattern matching", function(done) {
             var config = loader('not-valid-env', path.resolve(__dirname, '../fixtures/config'),
-                    path.resolve(__dirname, '../fixtures/systemConfigs'));
+                    path.resolve(__dirname, '../fixtures/systemConfigs'), 'g1dwtest01');
             assert.deepEqual(config, {
                 id: 'test-app',
                 env: 'development',

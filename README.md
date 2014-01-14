@@ -9,7 +9,7 @@ This package provides an easy way to access configuration information based on l
 - {{system}}/default.json
 
 NOTES:
-- The locator climbs the path from node_modules/x-config location to the volume root looking for a config directory. This enables packages to maintain seperate configurations.
+- The locator climbs the path from the parent module location to the volume root looking for a config directory. This enables packages to maintain seperate configurations.
 - The environment can be determined via HOSTNAME, or by placing env in default.json with dev, test, or prod, or pattern matching (see below).
 
 ##Usage

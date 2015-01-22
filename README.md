@@ -31,11 +31,25 @@ if (config.consoleEnabled){
 }
 ```
 
+```javascript
+var configFn = require('x-config'); // returns a function if _rest is enabled.
+
+configFn(function(err, config){
+  if (config.consoleEnabled){
+    console.log(config);
+  }
+});
+```
+
 The path to the system configuration files can either be defined using a SYSTEM_CONFIG environment variable or set systemConfig in the default or environment config files.
 
 ```json
 { "systemConfig": "/etc/node/" }
 ```
 
+To pull configuration from a REST service, use the following. This will cause the config library to return a function which you will want to call.
 
+```json
+{ "_rest": { "url": "http://myrestservice/...", "headers": { "X-AuthToken": "auth-token" } } }
+```
 

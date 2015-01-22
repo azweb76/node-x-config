@@ -11,10 +11,11 @@ describe("locator", function() {
     });
     
     it("should locate config dir", function(done) {
-        var actual = locator('/my/path', __dirname, function(p, addedPath){
+        var p = path.sep + 'my' + path.sep + 'path';
+        var actual = locator(p, __dirname, function(p, addedPath){
             return path.join(p, addedPath);
         });
-        assert.equal(actual, '/my/path/config', 'should match expected path');
+        assert.equal(actual, p + path.sep + 'config', 'should match expected path');
         done();
     });
 });

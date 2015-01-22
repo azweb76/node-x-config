@@ -1,6 +1,6 @@
 {
   "name": "x-config",
-  "version": "0.0.14",
+  "version": "0.0.17",
   "description": "Configuration package for node applications.",
   "main": "lib/x-config.js",
   "scripts": {
@@ -15,6 +15,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/azweb76/node-x-config/issues"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
   },
   "keywords": [
     "config"
